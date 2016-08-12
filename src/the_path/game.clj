@@ -12,7 +12,6 @@
         movement (direction->coordinate-change direction)
         next-position (merge-with + current-position movement)
         map (get-in game [:world :map])]
-    (println map)
     (if (map/can-move map next-position)
       (assoc-in game [:world :player :position] next-position)
       game)))
